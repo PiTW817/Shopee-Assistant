@@ -1,71 +1,662 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="2dq9YMLKDXztB_oPJ1Oo3joCDVphK7DI4owMGCWGtR8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【官方】[你的套件名稱] Pro 版 - 解鎖無限次數與進階功能</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <meta name="description" content="立即升級 [你的套件名稱] Pro 開發者版本，解鎖字串顯示限制，體驗更強大的自動化功能。點擊加入 LINE OA 領取最新安裝包。">
-    <meta name="keywords" content="Chrome套件, [功能關鍵字], Pro版下載, 軟體訂閱">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "[你的套件名稱] Pro",
-      "operatingSystem": "Chrome OS, Windows, macOS, Linux",
-      "applicationCategory": "BrowserExtension",
-      "offers": {
-        "@type": "Offer",
-        "price": "請洽客服",
-        "priceCurrency": "TWD"
-      }
-    }
-    </script>
-
+    <title>賣家助手 for Shopee - 官方網頁</title>
+    <meta name="description" content="賣家助手 for Shopee 官方網頁，免費取得無上限版本序號，查看使用說明。">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
-        .card { border: 1px solid #eaeaea; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-top: 40px; }
-        .btn-line { background-color: #06C755; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; font-size: 1.2rem; }
-        .steps { text-align: left; background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 30px; }
-        .highlight { color: #e74c3c; font-weight: bold; }
-        img.qr { width: 200px; margin-top: 20px; }
+        :root {
+            --primary: #0d9488;
+            --primary-light: #14b8a6;
+            --primary-dark: #0f766e;
+            --primary-grad: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #0f766e 100%);
+            --bg: #f0fdfa;
+            --card: #ffffff;
+            --text: #1e293b;
+            --subtext: #64748b;
+            --border: #e2e8f0;
+            --line-green: #06c755;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: var(--primary-grad);
+            color: white;
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -80px;
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -60px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero p {
+            font-size: 17px;
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 28px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* ===== NAV PILLS ===== */
+        .nav-bar {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 12px 0;
+        }
+
+        .nav-pill {
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--subtext);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .nav-pill:hover {
+            background: var(--bg);
+            color: var(--primary);
+        }
+
+        /* ===== SECTIONS ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section:not(:last-child) {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-desc {
+            font-size: 15px;
+            color: var(--subtext);
+            margin-bottom: 36px;
+        }
+
+        /* ===== SERIAL KEY ===== */
+        .key-card {
+            background: var(--card);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(13, 148, 136, 0.08);
+            border: 2px solid rgba(13, 148, 136, 0.15);
+        }
+
+        .key-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .key-card p {
+            font-size: 14px;
+            color: var(--subtext);
+            margin-bottom: 24px;
+        }
+
+        .key-button {
+            display: inline-block;
+            padding: 18px 48px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            border: 2px dashed var(--primary);
+            background: rgba(13, 148, 136, 0.06);
+            color: var(--primary);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            letter-spacing: 1px;
+            position: relative;
+            user-select: none;
+        }
+
+        .key-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(13, 148, 136, 0.2);
+        }
+
+        .key-button:active {
+            transform: translateY(0);
+        }
+
+        .key-button.revealed {
+            border-style: solid;
+            background: var(--primary-grad);
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 22px;
+            letter-spacing: 3px;
+            padding: 18px 40px;
+        }
+
+        .key-button.revealed:hover {
+            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.35);
+        }
+
+        .key-hint {
+            margin-top: 16px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* ===== FEATURES GALLERY ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+
+        .feature-item {
+            background: var(--card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .feature-img-wrapper img {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .feature-item:hover .feature-img-wrapper img {
+            transform: scale(1.02);
+        }
+
+        .feature-label {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--primary-grad);
+            color: white;
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3);
+        }
+
+        .feature-body {
+            padding: 24px 28px;
+        }
+
+        .feature-body h4 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .feature-body p {
+            font-size: 13px;
+            color: var(--subtext);
+            line-height: 1.7;
+        }
+
+        /* ===== ACTION BUTTONS ===== */
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 24px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none !important;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            text-decoration: none !important;
+        }
+
+        .btn-line {
+            background: var(--line-green);
+            box-shadow: 0 4px 16px rgba(6, 199, 85, 0.3);
+        }
+
+        .btn-line:hover {
+            box-shadow: 0 8px 28px rgba(6, 199, 85, 0.4);
+        }
+
+        .btn-sponsor {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-sponsor:hover {
+            box-shadow: 0 8px 28px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-icon {
+            font-size: 22px;
+        }
+
+        /* ===== DISCLAIMER ===== */
+        .disclaimer-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .disclaimer-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disclaimer-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .disclaimer-card ul li {
+            position: relative;
+            padding: 5px 0 5px 22px;
+            font-size: 13px;
+            color: var(--subtext);
+            line-height: 1.8;
+        }
+
+        .disclaimer-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 6px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 24px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.4);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .toast.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero {
+                padding: 50px 20px 40px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .key-card {
+                padding: 28px 20px;
+            }
+
+            .key-button {
+                padding: 14px 28px;
+                font-size: 15px;
+            }
+
+            .key-button.revealed {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <h1>🚀 升級 [你的套件名稱] Pro 版</h1>
-    <p>感謝您對我們的支持！免費版每日額度已用罄。</p>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-icon">🦐</div>
+            <h1>賣家助手 for Shopee</h1>
+            <p>快速掌握買家評價資訊，讓每筆訂單都有保障。免費使用，一鍵取得無上限版本。</p>
+            <span class="hero-badge">🎉 免費取得無上限版本序號</span>
+        </div>
+    </header>
 
-    <div class="card">
-        <h2>解鎖 Pro 版專屬權限</h2>
-        <ul style="list-style: none; padding: 0;">
-            <li>✅ <strong>無限次數</strong> 字串顯示</li>
-            <li>✅ <strong>優先更新</strong> 開發者專屬功能</li>
-            <li>✅ <strong>一對一</strong> LINE 技術支援</li>
-        </ul>
+    <!-- Sticky Nav -->
+    <nav class="nav-bar">
+        <div class="nav-inner">
+            <button class="nav-pill" onclick="document.getElementById('serial').scrollIntoView({behavior:'smooth'})">🔑
+                取得序號</button>
+            <button class="nav-pill"
+                onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">📋 使用說明</button>
+            <button class="nav-pill" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">💬
+                聯絡我們</button>
+            <button class="nav-pill"
+                onclick="document.getElementById('disclaimer').scrollIntoView({behavior:'smooth'})">📜 免責聲明</button>
+        </div>
+    </nav>
 
-        <p class="highlight">⚠️ 注意：Pro 版需透過「開發者模式」安裝</p>
-        
-        <a href="https://line.me/R/ti/p/@你的ID" class="btn-line">點我加入 LINE 領取 Pro 版</a>
-        <br>
-        <img src="你的QRcode圖片網址" alt="LINE QR Code" class="qr">
+    <div class="container">
+
+        <!-- Serial Key Section -->
+        <section id="serial">
+            <h2 class="section-title">🔑 免費取得無上限版本序號</h2>
+            <p class="section-desc">點擊下方按鈕即可取得序號，再次點擊即可複製至剪貼簿。</p>
+
+            <div class="key-card">
+                <h3>您的專屬啟用序號</h3>
+                <p>此序號可解除每日 5 次的使用限制，享受無上限查詢。</p>
+
+                <button class="key-button" id="key-btn" onclick="handleKeyClick()">
+                    👆 點擊取得序號
+                </button>
+                <div class="key-hint" id="key-hint">點擊按鈕顯示序號</div>
+            </div>
+        </section>
+
+        <!-- Features / Usage Guide -->
+        <section id="features">
+            <h2 class="section-title">📋 使用說明</h2>
+            <p class="section-desc">了解賣家助手的各項功能，讓您更有效率地管理訂單。</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-img-wrapper">
+                        <img src="images/feature-popup.png" alt="Popup 快速總覽">
+                        <span class="feature-label">快速總覽</span>
+                    </div>
+                    <div class="feature-body">
+                        <h4>📊 即時查看使用狀態</h4>
+                        <p>點擊瀏覽器工具列圖示即可查看今日使用額度、目前的顯示模式和版本狀態。所有關鍵資訊一目了然。</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-img-wrapper">
+                        <img src="images/feature-settings.png" alt="顯示模式設定">
+                        <span class="feature-label">顯示設定</span>
+                    </div>
+                    <div class="feature-body">
+                        <h4>🎨 兩種顯示模式</h4>
+                        <p><strong>嵌入模式：</strong>評價資訊直接嵌入訂單標頭中，適合需要一覽所有評價的使用者。<br>
+                            <strong>懸浮模式：</strong>滑鼠移到訂單上方才顯示，畫面更簡潔。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-img-wrapper">
+                        <img src="images/feature-quota.png" alt="額度管理與升級">
+                        <span class="feature-label">額度管理</span>
+                    </div>
+                    <div class="feature-body">
+                        <h4>🔑 輸入序號解鎖無上限</h4>
+                        <p>在設定頁面的「使用額度」中輸入序號即可升級為無上限版本。免費版每日可使用 5 次，升級後不受任何限制。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Actions -->
+        <section id="contact">
+            <h2 class="section-title">💬 聯絡與支持</h2>
+            <p class="section-desc">有任何問題或建議？歡迎透過 LINE 官方帳號與我們聯繫。</p>
+
+            <div class="action-grid">
+                <a href="https://line.me/R/ti/p/@460mkoip" target="_blank" class="action-btn btn-line">
+                    <span class="btn-icon">💬</span>
+                    加入 LINE 官方帳號
+                </a>
+                <a href="#" class="action-btn btn-sponsor" id="sponsor-btn">
+                    <span class="btn-icon">☕</span>
+                    贊助我們
+                </a>
+            </div>
+        </section>
+
+        <!-- Disclaimer -->
+        <section id="disclaimer">
+            <h2 class="section-title">📜 免責聲明</h2>
+            <p class="section-desc">使用本套件前請閱讀以下事項。</p>
+
+            <div class="disclaimer-card">
+                <h3>⚖️ 使用者須知</h3>
+                <ul>
+                    <li>本套件為第三方工具，與蝦皮官方無任何關聯。</li>
+                    <li>使用本套件所產生的任何風險由使用者自行承擔。</li>
+                    <li>本套件不會收集、儲存或傳輸您的任何個人資料或帳號密碼至任何伺服器，並遵循 Chrome Extension 隱私權政策。</li>
+                    <li>所有資料僅存於您的瀏覽器本機。</li>
+                    <li>本序號僅供合法使用，禁止轉售或用於商業用途。</li>
+                    <li>開發者保留隨時修改或終止服務的權利。</li>
+                </ul>
+            </div>
+        </section>
+
     </div>
 
-    <div class="steps">
-        <h3>📦 如何安裝 Pro 版？</h3>
-        <p>1. 透過 LINE 聯繫客服並完成訂閱。</p>
-        <p>2. 下載我們提供的 <strong>.zip</strong> 壓縮檔並解壓縮。</p>
-        <p>3. 開啟 Chrome 擴充功能頁面 (chrome://extensions)。</p>
-        <p>4. 開啟右上角 <strong>「開發者模式」</strong>。</p>
-        <p>5. 點擊「載入解壓縮」，選擇該資料夾即可完成！</p>
-    </div>
-
-    <footer style="margin-top: 50px; color: #999; font-size: 0.8rem;">
-        &copy; 2026 [你的行號/名稱] 版權所有
+    <!-- Footer -->
+    <footer class="footer">
+        賣家助手 for Shopee &copy; 2026 · 僅供賣家使用
     </footer>
 
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const SERIAL_KEY = 'shopeeassistantpro';
+        let keyRevealed = false;
+
+        function handleKeyClick() {
+            const btn = document.getElementById('key-btn');
+            const hint = document.getElementById('key-hint');
+
+            if (!keyRevealed) {
+                // First click: reveal the key
+                keyRevealed = true;
+                btn.textContent = SERIAL_KEY;
+                btn.classList.add('revealed');
+                hint.textContent = '👆 再次點擊即可複製到剪貼簿';
+            } else {
+                // Second click: copy to clipboard
+                navigator.clipboard.writeText(SERIAL_KEY).then(() => {
+                    showToast('✅ 已複製至剪貼簿');
+                    hint.textContent = '已複製！請到套件設定頁面貼上啟用';
+                }).catch(() => {
+                    // Fallback
+                    const textarea = document.createElement('textarea');
+                    textarea.value = SERIAL_KEY;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    showToast('✅ 已複製至剪貼簿');
+                    hint.textContent = '已複製！請到套件設定頁面貼上啟用';
+                });
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('visible');
+            setTimeout(() => {
+                toast.classList.remove('visible');
+            }, 2500);
+        }
+    </script>
 </body>
+
 </html>
